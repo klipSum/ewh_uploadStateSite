@@ -1666,7 +1666,7 @@
                                 var styleForHeadlinerTextMainArb = `
                                 
                                     width:100%;
-                                    text-align:left;
+                                    text-align:right;
                                     transform:rotateY(-180deg);
                                     transition:all 600ms ease;
                                     -o-transition:all 600ms ease;
@@ -1698,7 +1698,7 @@
                                 var styleForSubHeadlinerTextMainArb = `
                                 
                                     width:100%;
-                                    text-align:left;
+                                    text-align:right;
                                     transform:rotateY(-180deg);
                                     transition:all 600ms ease;
                                     -o-transition:all 600ms ease;
@@ -2228,7 +2228,7 @@
                                             
                                         {
 
-                                            pageElementsSelectorsArray[languageElementsCounter].style `
+                                            pageElementsSelectorsArray[languageElementsCounter].style = `
                                             
                                                 ${englishPageElementStylesArray[languageElementsCounter]}
 
@@ -2268,7 +2268,7 @@
                                             
                                         {
 
-                                            pageElementsSelectorsArray[languageElementsCounter].style `
+                                            pageElementsSelectorsArray[languageElementsCounter].style = `
                                             
                                                 ${arabicPageElementStylesArray[languageElementsCounter]}
 
@@ -2308,7 +2308,7 @@
                                             
                                         {
 
-                                            pageElementsSelectorsArray[languageElementsCounter].style `
+                                            pageElementsSelectorsArray[languageElementsCounter].style = `
                                             
                                                 ${arabicPageElementStylesArray[languageElementsCounter]}
 
