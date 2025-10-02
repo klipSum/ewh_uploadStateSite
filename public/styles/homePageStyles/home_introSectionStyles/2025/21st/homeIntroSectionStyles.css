@@ -78,6 +78,8 @@
             cursor:pointer;
             margin:0px auto;
             position:absolute;
+            overflow:hidden;
+            border-radius:1000px;
             transition:all 600ms ease;
             -o-transition:all 600ms ease;
             -ms-transition:all 600ms ease;
@@ -111,9 +113,8 @@
 
                         width:100%;
                         height:100%;
-                        z-index:0;
+                        z-index:1;
                         position:absolute;
-                        background:#dd5858;
                         transition:all 600ms ease;
                         -o-transition:all 600ms ease;
                         -ms-transition:all 600ms ease;
@@ -128,7 +129,6 @@
                             height:100%;
                             z-index:1;
                             position:absolute;
-                            background:#82dd58;
                             transition:all 600ms ease;
                             -o-transition:all 600ms ease;
                             -ms-transition:all 600ms ease;
@@ -143,7 +143,6 @@
                             height:100%;
                             z-index:0;
                             position:absolute;
-                            background:#e4e13f;
                             transition:all 600ms ease;
                             -o-transition:all 600ms ease;
                             -ms-transition:all 600ms ease;
@@ -159,7 +158,7 @@
 
                         width:100%;
                         height:100%;
-                        z-index:1;
+                        z-index:0;
                         color:#3A5668;
                         top:0;
                         left:0;

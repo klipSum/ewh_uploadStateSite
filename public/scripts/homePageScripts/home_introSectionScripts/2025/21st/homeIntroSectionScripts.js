@@ -529,6 +529,14 @@
 
                 var introSliderBackMainButton = document.querySelector(`.hpIntroSectionBackButtonElement`)
 
+                // ELEMENTS FOR LANGAUGE SELECTIONS BUTTONS ========================== //
+                // =================================================================== //
+
+                    var getLangaugeSelectionEngClicker = document.querySelector(`.hpNavBarMenuLanguageSelectorEnglishClicker`)
+                    var getLangaugeSelectionArbClicker = document.querySelector(`.hpNavBarMenuLanguageSelectorArabicClicker`)
+
+                    var getLangaugeSelectionTextActual = document.querySelector(`.hpNavBarMenuLanguageSelectorContainerLanguageText`)
+
                 // ELEMENTS FOR EDIT BUTTONS ========================================= //
                 // =================================================================== //
 
@@ -935,6 +943,68 @@
 
                         // OPEN CLOSE PANELS ======================================== //
                         // ========================================================== //
+
+                            // FOR LANGUAGE SELECTION =============================== //
+                            // ====================================================== //
+
+                                // CLICKERS SETTINGS ================================ //
+                                // ================================================== //
+
+                                    var englishClickerFront = `
+                                    
+                                        width:100%;
+                                        height:100%;
+                                        z-index:1;
+                                        position:absolute;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                    var englishClickerBack = `
+                                    
+                                        width:100%;
+                                        height:100%;
+                                        z-index:-1;
+                                        position:absolute;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                    var arabicClickerFront = `
+                                    
+                                        width:100%;
+                                        height:100%;
+                                        z-index:1;
+                                        position:absolute;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                    var arabicClickerBack = `
+                                    
+                                        width:100%;
+                                        height:100%;
+                                        z-index:-1;
+                                        position:absolute;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
 
                             // FOR GALLERY EDIT ===================================== //
                             // ====================================================== //
@@ -2205,6 +2275,90 @@
 
                             var getSessionLangaugeSelector = sessionStorage.getItem("language")
 
+                        // SET LANGAUGE BUTTON FUNCTIONS ============================= //
+                        // =========================================================== //
+
+                            // FOR ARABIC READY BUTTON SETTING ======================= //
+                            // ======================================================= //
+
+                                function languageSelectorSetForArabic () {
+
+                                    // RESET CLICKERS FOR LANUAGE READY ============== //
+                                    // =============================================== //
+
+                                        // MOVE ENGLISH CLICKER TO BACK ============== //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionEngClicker.style = `
+                                        
+                                                ${englishClickerBack}
+
+                                            `
+
+                                        // MOVE ARABIC CLICKER TO FRONT ============== //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionArbClicker.style = `
+                                        
+                                                ${arabicClickerFront}
+
+                                            `
+
+                                        // CHANGE PAGE LANGUAGE BUTTON FROM ENG TO ARB //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionTextActual.textContent = "عربي"
+
+                                        // SET SESSION TO ENGLISH LANGUAGE SELECTED MODE //
+                                        // ============================================= //
+
+                                            sessionStorage.setItem("languge","eng")
+
+                                }
+
+                            // FOR ARABIC READY BUTTON SETTING ======================= //
+                            // ======================================================= //
+
+                                function languageSelectorSetForEnglish () {
+
+                                    // RESET CLICKERS FOR LANUAGE READY ============== //
+                                    // =============================================== //
+
+                                        // MOVE ARABIC CLICKER TO BACK =============== //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionArbClicker.style = `
+                                        
+                                                ${arabicClickerBack}
+
+                                            `
+
+                                        // MOVE ARABIC CLICKER TO FRONT ============== //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionEngClicker.style = `
+                                        
+                                                ${englishClickerFront}
+
+                                            `
+
+                                        // CHANGE PAGE LANGUAGE BUTTON FROM ARB TO ENG //
+                                        // =========================================== //
+
+                                            getLangaugeSelectionTextActual.textContent = "ENG"
+
+                                        // SET SESSION TO ARABIC LANGUAGE SELECTED MODE //
+                                        // ============================================ //
+
+                                            sessionStorage.setItem("languge","arb")
+
+                                }
+
+
+
+
+                                
+
                         // CHECK IF PAGE LANGUAGE IS ENGLISH ========================= //
                         // =========================================================== //
 
@@ -2242,6 +2396,11 @@
                                         introSectionMainBlockHeadlineContentText.textContent = `${englishDictionary[0]}`
                                         introSectionMainBlockSubHeadlineContentText.textContent = `${englishDictionary[1]}`
                                         introSectionMainBlockActionButtonContentText.textContent = `${englishDictionary[2]}`
+
+                                    // CHANGE LANGAUGE SELECTOR BUTTONS TO ENGLISH MODE //
+                                    // ================================================ //
+
+                                        languageSelectorSetForArabic()
 
                             }
 
@@ -2283,6 +2442,11 @@
                                         introSectionMainBlockSubHeadlineContentText.textContent = `${arabicDictionary[1]}`
                                         introSectionMainBlockActionButtonContentText.textContent = `${arabicDictionary[2]}`
 
+                                    // CHANGE LANGAUGE SELECTOR BUTTONS TO ENGLISH MODE //
+                                    // ================================================ //
+
+                                        languageSelectorSetForEnglish()
+
                             }
 
                         // IF PAGE LANGUAGE IS NOT AVAILABLE THEN REVERT TO DEFAULT == //
@@ -2323,6 +2487,11 @@
                                         introSectionMainBlockSubHeadlineContentText.textContent = `${arabicDictionary[1]}`
                                         introSectionMainBlockActionButtonContentText.textContent = `${arabicDictionary[2]}`
 
+                                    // CHANGE LANGAUGE SELECTOR BUTTONS TO ENGLISH MODE //
+                                    // ================================================ //
+
+                                        languageSelectorSetForEnglish()
+
                             }
 
                     }
@@ -2335,8 +2504,31 @@
 
                             function englishLanguagePageSet () {
 
+                                // CHANGE PAGE LANGUAGE CLICKERS ===================== //
+                                // =================================================== //
+
+                                    // MOVE ENGLISH CLICKER TO BACK ================== //
+                                    // =============================================== //
+
+                                        getLangaugeSelectionEngClicker.style = `
+                                        
+                                            ${englishClickerBack}
+
+                                        `
+
+                                    // MOVE ARABIC BUTTON CLICKER TO FRONT =========== //
+                                    // =============================================== //
+
+                                        getLangaugeSelectionArbClicker.style = `
+                                        
+                                            ${arabicClickerFront}
+
+                                        `
+
                                 // CHANGE PAGE LANGUAGE BUTTON FROM ENG TO ARB ======= //
                                 // =================================================== //
+
+                                    getLangaugeSelectionTextActual.textContent = "عربي"
 
                                 // SET SESSION TO ENGLISH LANGUAGE SELECTED MODE ===== //
                                 // =================================================== //
@@ -2359,7 +2551,7 @@
                                             
                                         {
 
-                                            pageElementsSelectorsArray[languageElementsCounter].style `
+                                            pageElementsSelectorsArray[languageElementsCounter].style = `
                                             
                                                 ${englishPageElementStylesArray[languageElementsCounter]}
 
@@ -2382,10 +2574,33 @@
                         // CHANGE PAGE LANGAUGE TO ARABIC ON CLICK =================== //
                         // =========================================================== //
 
-                            function englishLanguagePageSet () {
+                            function arabicLanguagePageSet () {
 
-                                // CHANGE PAGE LANGUAGE BUTTON FROM ARB TO ENG ======= //
+                                // CHANGE PAGE LANGUAGE CLICKERS ===================== //
                                 // =================================================== //
+
+                                    // MOVE ARABIC CLICKER TO BACK =================== //
+                                    // =============================================== //
+
+                                        getLangaugeSelectionArbClicker.style = `
+                                        
+                                            ${arabicClickerBack}
+
+                                        `
+
+                                    // MOVE ENGLISH BUTTON CLICKER TO FRONT ========== //
+                                    // =============================================== //
+
+                                        getLangaugeSelectionEngClicker.style = `
+                                        
+                                            ${englishClickerFront}
+
+                                        `
+
+                                // CHANGE PAGE LANGUAGE BUTTON FROM ENG TO ARB ======= //
+                                // =================================================== //
+
+                                    getLangaugeSelectionTextActual.textContent = "eng"
 
                                 // SET SESSION TO ARABIC LANGUAGE SELECTED MODE ====== //
                                 // =================================================== //
@@ -2408,7 +2623,7 @@
                                             
                                         {
 
-                                            pageElementsSelectorsArray[languageElementsCounter].style `
+                                            pageElementsSelectorsArray[languageElementsCounter].style = `
                                             
                                                 ${arabicPageElementStylesArray[languageElementsCounter]}
 
@@ -4440,6 +4655,21 @@
 
     // EVENTS ======================================================================== //
     // =============================================================================== //
+
+        // LANGUAGE SELECTION BUTTONS CLICK ========================================== //
+        // =========================================================================== //
+
+            getLangaugeSelectionEngClicker.addEventListener("click", function () {
+
+                englishLanguagePageSet()
+
+            })
+
+            getLangaugeSelectionArbClicker.addEventListener("click", function () {
+
+                arabicLanguagePageSet()
+
+            })
 
         // INTRO SECTION MAIN BLOCK BUTTON CLICK ===================================== //
         // =========================================================================== //
