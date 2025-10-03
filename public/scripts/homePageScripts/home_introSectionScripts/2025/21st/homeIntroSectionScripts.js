@@ -549,11 +549,6 @@
                             // CLICKERS FOR BACKGROUND GALLERY ======================= //
                             // ======================================================= //
 
-                                // BACKGROUND GALLERY SLIDER ========================= //
-                                // =================================================== //
-
-                                    var backgroundGallerySlider = document.querySelector(`.editIntroSectionBackgroundGalleryContentSlider`)
-
                                 // GALLERY BUTTON LEFT AND CLICKERS ================== //
                                 // =================================================== //
 
@@ -615,7 +610,7 @@
                     // LEFT CLICKERS AND MAIN BUTTON ================================= //
                     // =============================================================== //
 
-                        var mainGalleryLeftButtonMain = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerContainer`)
+                        var mainGalleryLeftButtonArrow = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftButtonIconMover`)
 
                         var mainGalleryLeftButtonClickerOne = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerOne`)
                         var mainGalleryLeftButtonClickerTwo = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerTwo`)
@@ -624,7 +619,7 @@
                     // RIGHT CLICKERS AND MAIN BUTTON ================================ //
                     // =============================================================== //
 
-                        var mainGalleryRightButtonMain = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerContainer`)
+                        var mainGalleryRightButtonArrow = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightButtonIconMover`)
 
                         var mainGalleryRightButtonClickerOne = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerOne`)
                         var mainGalleryRightButtonClickerTwo = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerTwo`)
@@ -1522,6 +1517,111 @@
 
 
 
+                // FOR MAIN PAGE GALLERY SELECTION SECTION =========================== //
+                // =================================================================== //
+
+                    // PROPERTIES FOR CLICKERS ======================================= //
+                    // =============================================================== //
+
+                        // ACTIVE ==================================================== //
+                        // =========================================================== //
+
+                            var galleryActiveSelectClicker = `
+                            
+                                width:100%;
+                                height:100%;
+                                top:0;
+                                left:0;
+                                right:0;
+                                bottom:0;
+                                z-index:1;
+                                cursor:pointer;
+                                margin:auto;
+                                display:block;
+                                position:absolute;
+                                transition:all 600ms ease;
+                                -o-transition:all 600ms ease;
+                                -ms-transition:all 600ms ease;
+                                -moz-transition:all 600ms ease;
+                                -webkit-transition:all 600ms ease;
+
+                            `
+
+                        // INACTIVE ================================================== //
+                        // =========================================================== //
+
+                            var galleryInActiveSelectClicker = `
+                            
+                                width:100%;
+                                height:100%;
+                                top:0;
+                                left:0;
+                                right:0;
+                                bottom:0;
+                                z-index:-1;
+                                cursor:pointer;
+                                margin:auto;
+                                display:none;
+                                position:absolute;
+                                transition:all 600ms ease;
+                                -o-transition:all 600ms ease;
+                                -ms-transition:all 600ms ease;
+                                -moz-transition:all 600ms ease;
+                                -webkit-transition:all 600ms ease;
+
+                            `
+
+                    // PROPERTIES FOR BUTTON ARROWS ================================== //
+                    // =============================================================== //
+
+                        // ACTIVE ==================================================== //
+                        // =========================================================== //
+
+                            var galleryActiveSelectButtonArrow = `
+                            
+                                width:20px;
+                                height:20px;
+                                top:0;
+                                left:0;
+                                right:0;
+                                bottom:0;
+                                margin:auto;
+                                opacity:1;
+                                position:absolute;
+                                transition:all 600ms ease;
+                                -o-transition:all 600ms ease;
+                                -ms-transition:all 600ms ease;
+                                -moz-transition:all 600ms ease;
+                                -webkit-transition:all 600ms ease;
+
+                            `
+
+                        // INACTIVE ================================================== //
+                        // =========================================================== //
+
+                            var galleryInActiveSelectButtonArrow = `
+                            
+                                width:20px;
+                                height:20px;
+                                top:0;
+                                left:0;
+                                right:0;
+                                bottom:0;
+                                margin:auto;
+                                opacity:0.2;
+                                position:absolute;
+                                transition:all 600ms ease;
+                                -o-transition:all 600ms ease;
+                                -ms-transition:all 600ms ease;
+                                -moz-transition:all 600ms ease;
+                                -webkit-transition:all 600ms ease;
+
+                            `
+
+
+
+
+
 
 
 
@@ -2014,15 +2114,10 @@
                 // GALLERY CLICKERS NUMBER SELECTOR ================================== //
                 // =================================================================== //
 
-                    // LEFT CLICKERS NUMBER COLLECT ================================== //
+                    // GALLERY SLIDER MARGIN CONTROL ================================= //
                     // =============================================================== //
 
-                        var introSectionGalleryLeftClickersCounter = 0
-
-                    // RIGHT CLICKERS NUMBER COLLECT ================================= //
-                    // =============================================================== //
-
-                        var introSectionGalleryRightClickersCounter = 1
+                        var gallerySliderMarginControl = 0
 
 
 
@@ -2348,7 +2443,7 @@
                                         // SET SESSION TO ENGLISH LANGUAGE SELECTED MODE //
                                         // ============================================= //
 
-                                            sessionStorage.setItem("languge","eng")
+                                            sessionStorage.setItem("language","eng")
 
                                 }
 
@@ -2386,7 +2481,7 @@
                                         // SET SESSION TO ARABIC LANGUAGE SELECTED MODE //
                                         // ============================================ //
 
-                                            sessionStorage.setItem("languge","arb")
+                                            sessionStorage.setItem("language","arb")
 
                                 }
 
@@ -2569,7 +2664,7 @@
                                 // SET SESSION TO ENGLISH LANGUAGE SELECTED MODE ===== //
                                 // =================================================== //
 
-                                    sessionStorage.setItem("languge","eng")
+                                    sessionStorage.setItem("language","eng")
 
                                 // CHANGE ELEMENTS STYLES AND TEXT TO ENGLISH SETUP == //
                                 // =================================================== //
@@ -2641,7 +2736,7 @@
                                 // SET SESSION TO ARABIC LANGUAGE SELECTED MODE ====== //
                                 // =================================================== //
 
-                                    sessionStorage.setItem("languge","arb")
+                                    sessionStorage.setItem("language","arb")
 
                                 // CHANGE ELEMENTS STYLES AND TEXT TO ARABIC SETUP === //
                                 // =================================================== //
@@ -2966,59 +3061,189 @@
                             // GALLERY SELECTION BUTTONS AND CLICKERS FUNCTIONS ====== //
                             // ======================================================= //
 
+                                // DECLARE EXTRA VARIABLES FOR INNER GALLERY USER ==== //
+                                // =================================================== //
 
+                                    // BACKGROUND GALLERY SLIDER ===================== //
+                                    // =============================================== //
 
+                                        var backgroundGallerySlider = document.querySelector(`.editIntroSectionBackgroundGalleryContainer`)
+
+                                    // GET GALLERY HEADLINE TEXT ACTUAL ============== //
+                                    // =============================================== //
+
+                                        var getMainGalleryHealdineTextActual = document.querySelector(`.editIntroSectionBackgroundGalleryContentHeadlinerText`)
 
                                 // FOR LEFT SIDE BUTTONS AND CLICKERS ================ //
                                 // =================================================== //
 
-                                    function gallerySelectLeftButtonProperties () {
+                                    // CLICKER ONE RIGHT ============================= //
+                                    // =============================================== //
 
-                                        // CHECK IF LEFT CLICKER NUMBER IS AT MIN ==== //
-                                        // =========================================== //
+                                        function galleryLeftSwitcherClickerOne () {
 
-                                            if ( introSectionGalleryLeftClickersCounter == 0 ) {
 
-                                                console.log("MIN REACHED")
+                                            // SWITCH OFF CURRENT LEFT CLICKER ======= //
+                                            // ======================================= //
 
-                                            }
-
-                                        // CHECK IF LEFT CLICKER NUMBER IS AT MAX ==== //
-                                        // =========================================== //
-
-                                            else if ( introSectionGalleryLeftClickersCounter == 3 ) {
-
-                                                console.log("MAX REACHED")
+                                                mainGalleryLeftButtonClickerOne.style = `
                                                 
-                                            }
-
-                                        // IF LEFT CLICKER NUMBER IS NOT MAX OR MIN == //
-                                        // =========================================== //
-
-                                            else {
-
-                                                console.log("LEFT ACTIVE")
-
-                                                introSectionGalleryLeftClickersCounter ++
-
-                                                backgroundGallerySlider.style = `
-                                                
-                                                    width:400%;
-                                                    height:100%;
-                                                    position:relative;
-                                                    background:rgb(255, 255, 255, 0.00);
-                                                    margin-left:0%;
-                                                    transition:all 600ms ease;
-                                                    -o-transition:all 600ms ease;
-                                                    -ms-transition:all 600ms ease;
-                                                    -moz-transition:all 600ms ease;
-                                                    -webkit-transition:all 600ms ease;
+                                                    ${galleryInActiveSelectClicker}
 
                                                 `
 
-                                            }
+                                            // SWITCH OFF LEFT BUTTON ARROW ========== //
+                                            // ======================================= //
 
-                                    }
+                                                mainGalleryLeftButtonArrow.style = `
+                                                
+                                                    ${galleryInActiveSelectButtonArrow}
+
+                                                `
+
+                                            // SWITCH ON FIRST RIGHT CLICKER ========= //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerOne.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH OFF SECOND RIGHT CLICKER ======= //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerTwo.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = 0
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `WATER GALLERY`
+
+                                        }
+
+                                    // CLICKER ONE RIGHT ============================= //
+                                    // =============================================== //
+
+                                        function galleryLeftSwitcherClickerTwo () {
+
+
+                                            // SWITCH OFF CURRENT LEFT CLICKER ======= //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerTwo.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON FIRST LEFT CLICKER ========== //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerOne.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON SECOND RIGHT CLICKER ======== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerTwo.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH OFF THIRD RIGHT CLICKER ======== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerThree.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = -100
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `ENERGY GALLERY`
+
+                                        }
+
+                                    // CLICKER ONE RIGHT ============================= //
+                                    // =============================================== //
+
+                                        function galleryLeftSwitcherClickerThree () {
+
+
+                                            // SWITCH OFF CURRENT LEFT CLICKER ======= //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerThree.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON SECOND LEFT CLICKER ========= //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerTwo.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON THIRD RIGHT CLICKER ========= //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerThree.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON RIGHT BUTTON ARROW ========== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonArrow.style = `
+                                                
+                                                    ${galleryActiveSelectButtonArrow}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = -200
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `HYDROGEN GALLERY`
+
+                                        }
 
 
 
@@ -3026,38 +3251,173 @@
                                 // FOR RIGHT SIDE BUTTONS AND CLICKERS =============== //
                                 // =================================================== //
 
-                                    function gallerySelectRightButtonProperties () {
+                                    // CLICKER ONE RIGHT ============================= //
+                                    // =============================================== //
 
-                                        // CHECK IF RIGHT CLICKER NUMBER IS AT MIN === //
-                                        // =========================================== //
+                                        function galleryRightSwitcherClickerOne () {
 
-                                            if ( introSectionGalleryRightClickersCounter == 0 ) {
 
-                                                console.log("RIGHT MIN REACHED")
+                                            // SWITCH OFF CURRENT RIGHT CLICKER ====== //
+                                            // ======================================= //
 
-                                            }
-
-                                        // CHECK IF RIGHT CLICKER NUMBER IS AT MAX === //
-                                        // =========================================== //
-
-                                            else if ( introSectionGalleryRightClickersCounter == 3 ) {
-
-                                                console.log("RIGHT MAX REACHED")
+                                                mainGalleryRightButtonClickerOne.style = `
                                                 
-                                            }
+                                                    ${galleryInActiveSelectClicker}
 
-                                        // IF RIGHT CLICKER NUMBER IS NOT MAX OR MIN = //
-                                        // =========================================== //
+                                                `
 
-                                            else {
+                                            // SWITCH ON NEXT RIGHT CLICKER ========== //
+                                            // ======================================= //
 
-                                                console.log("RIGHT ACTIVE")
+                                                mainGalleryRightButtonClickerTwo.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
 
-                                                introSectionGalleryRightClickersCounter ++
+                                                `
 
-                                            }
+                                            // SWITCH ON FIRST LEFT CLICKER ========== //
+                                            // ======================================= //
 
-                                    }
+                                                mainGalleryLeftButtonClickerOne.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON LEFT BUTTON ARROW =========== //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonArrow.style = `
+                                                
+                                                    ${galleryActiveSelectButtonArrow}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = -100
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `ENERGY GALLERY`
+
+                                        }
+
+                                    // CLICKER TWO RIGHT ============================= //
+                                    // =============================================== //
+
+                                        function galleryRightSwitcherClickerTwo () {
+
+
+                                            // SWITCH OFF CURRENT RIGHT CLICKER ====== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerTwo.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON NEXT RIGHT CLICKER ========== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerThree.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH OFF FIRST LEFT CLICKER ========= //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerOne.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON SECOND LEFT CLICKER ========= //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerTwo.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = -200
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `HYDROGEN GALLERY`
+
+                                        }
+
+                                    // CLICKER THREE RIGHT =========================== //
+                                    // =============================================== //
+
+                                        function galleryRightSwitcherClickerThree () {
+
+
+                                            // SWITCH OFF CURRENT RIGHT CLICKER ====== //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonClickerThree.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH OFF RIGHT BUTTON ARROW ========= //
+                                            // ======================================= //
+
+                                                mainGalleryRightButtonArrow.style = `
+                                                
+                                                    ${galleryInActiveSelectButtonArrow}
+
+                                                `
+
+                                            // SWITCH OFF SECOND LEFT CLICKER ======== //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerTwo.style = `
+                                                
+                                                    ${galleryInActiveSelectClicker}
+
+                                                `
+
+                                            // SWITCH ON THIRD LEFT CLICKER ========== //
+                                            // ======================================= //
+
+                                                mainGalleryLeftButtonClickerThree.style = `
+                                                
+                                                    ${galleryActiveSelectClicker}
+
+                                                `
+
+                                            // APPLY NEW SLIDER MARGIN PROPERTIES ==== //
+                                            // ======================================= //
+
+                                                gallerySliderMarginControl = -300
+
+                                                backgroundGallerySlider.children[2].children[1].style.marginLeft = `${gallerySliderMarginControl}%`
+
+                                            // CHANGE GALLERY HEADLINER TEXT ========= //
+                                            // ======================================= //
+
+                                                getMainGalleryHealdineTextActual.textContent = `NATURE GALLERY`
+
+                                        }
 
 
 
@@ -5083,7 +5443,19 @@
 
                 mainGalleryLeftButtonClickerOne.addEventListener("click", function () {
 
-                    gallerySelectLeftButtonProperties()
+                    galleryLeftSwitcherClickerOne()
+
+                })
+
+                mainGalleryLeftButtonClickerTwo.addEventListener("click", function () {
+
+                    galleryLeftSwitcherClickerTwo()
+
+                })
+
+                mainGalleryLeftButtonClickerThree.addEventListener("click", function () {
+
+                    galleryLeftSwitcherClickerThree()
 
                 })
 
@@ -5092,7 +5464,19 @@
 
                 mainGalleryRightButtonClickerOne.addEventListener("click", function () {
 
-                    gallerySelectRightButtonProperties()
+                    galleryRightSwitcherClickerOne()
+
+                })
+
+                mainGalleryRightButtonClickerTwo.addEventListener("click", function () {
+
+                    galleryRightSwitcherClickerTwo()
+
+                })
+
+                mainGalleryRightButtonClickerThree.addEventListener("click", function () {
+
+                    galleryRightSwitcherClickerThree()
 
                 })
 
