@@ -546,6 +546,32 @@
                         var introSectionEditBackgroundOpenButton = document.querySelector(`.editIntroSectionBackgroundControlsButtonClickerOn`)
                         var introSectionEditBackgroundCloseButton = document.querySelector(`.editIntroSectionBackgroundControlsButtonClickerOff`)
 
+                            // CLICKERS FOR BACKGROUND GALLERY ======================= //
+                            // ======================================================= //
+
+                                // BACKGROUND GALLERY SLIDER ========================= //
+                                // =================================================== //
+
+                                    var backgroundGallerySlider = document.querySelector(`.editIntroSectionBackgroundGalleryContentSlider`)
+
+                                // GALLERY BUTTON LEFT AND CLICKERS ================== //
+                                // =================================================== //
+
+                                    var introSectionEditBackgroundLeftButtonMain = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftButtonIconMover`)
+
+                                        var introSectionEditBackgroundLeftClickerOne = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerOne`)
+                                        var introSectionEditBackgroundLeftClickerTwo = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerTwo`)
+                                        var introSectionEditBackgroundLeftClickerThree = document.querySelector(`.editIntroSectionBackgroundGalleryArrowLeftClickerThree`)
+
+                                // GALLERY BUTTON RIGHT AND CLICKERS ================== //
+                                // =================================================== //
+
+                                    var introSectionEditBackgroundRightButtonMain = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightButtonIconMover`)
+
+                                        var introSectionEditBackgroundRightClickerOne = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerOne`)
+                                        var introSectionEditBackgroundRightClickerTwo = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerTwo`)
+                                        var introSectionEditBackgroundRightClickerThree = document.querySelector(`.editIntroSectionBackgroundGalleryArrowRightClickerThree`)
+
                     // EDIT TEXT CONTENT CLICKERS ==================================== //
                     // =============================================================== //
 
@@ -1985,8 +2011,18 @@
 
                         
 
-                // GATHER GALLERY IMAGE PATHS ======================================== //
+                // GALLERY CLICKERS NUMBER SELECTOR ================================== //
                 // =================================================================== //
+
+                    // LEFT CLICKERS NUMBER COLLECT ================================== //
+                    // =============================================================== //
+
+                        var introSectionGalleryLeftClickersCounter = 0
+
+                    // RIGHT CLICKERS NUMBER COLLECT ================================= //
+                    // =============================================================== //
+
+                        var introSectionGalleryRightClickersCounter = 1
 
 
 
@@ -2926,6 +2962,105 @@
 
 
                                 }
+
+                            // GALLERY SELECTION BUTTONS AND CLICKERS FUNCTIONS ====== //
+                            // ======================================================= //
+
+
+
+
+                                // FOR LEFT SIDE BUTTONS AND CLICKERS ================ //
+                                // =================================================== //
+
+                                    function gallerySelectLeftButtonProperties () {
+
+                                        // CHECK IF LEFT CLICKER NUMBER IS AT MIN ==== //
+                                        // =========================================== //
+
+                                            if ( introSectionGalleryLeftClickersCounter == 0 ) {
+
+                                                console.log("MIN REACHED")
+
+                                            }
+
+                                        // CHECK IF LEFT CLICKER NUMBER IS AT MAX ==== //
+                                        // =========================================== //
+
+                                            else if ( introSectionGalleryLeftClickersCounter == 3 ) {
+
+                                                console.log("MAX REACHED")
+                                                
+                                            }
+
+                                        // IF LEFT CLICKER NUMBER IS NOT MAX OR MIN == //
+                                        // =========================================== //
+
+                                            else {
+
+                                                console.log("LEFT ACTIVE")
+
+                                                introSectionGalleryLeftClickersCounter ++
+
+                                                backgroundGallerySlider.style = `
+                                                
+                                                    width:400%;
+                                                    height:100%;
+                                                    position:relative;
+                                                    background:rgb(255, 255, 255, 0.00);
+                                                    margin-left:0%;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            }
+
+                                    }
+
+
+
+
+                                // FOR RIGHT SIDE BUTTONS AND CLICKERS =============== //
+                                // =================================================== //
+
+                                    function gallerySelectRightButtonProperties () {
+
+                                        // CHECK IF RIGHT CLICKER NUMBER IS AT MIN === //
+                                        // =========================================== //
+
+                                            if ( introSectionGalleryRightClickersCounter == 0 ) {
+
+                                                console.log("RIGHT MIN REACHED")
+
+                                            }
+
+                                        // CHECK IF RIGHT CLICKER NUMBER IS AT MAX === //
+                                        // =========================================== //
+
+                                            else if ( introSectionGalleryRightClickersCounter == 3 ) {
+
+                                                console.log("RIGHT MAX REACHED")
+                                                
+                                            }
+
+                                        // IF RIGHT CLICKER NUMBER IS NOT MAX OR MIN = //
+                                        // =========================================== //
+
+                                            else {
+
+                                                console.log("RIGHT ACTIVE")
+
+                                                introSectionGalleryRightClickersCounter ++
+
+                                            }
+
+                                    }
+
+
+
 
                     // BUILD TECHFRAMES SELECTOR GALLERY AUTOPOPULATE ================ //
                     // =============================================================== //
@@ -4946,8 +5081,20 @@
             // GALLERY LEFT CLICKERS AND MAIN BUTTONS ================================ //
             // ======================================================================= //
 
+                mainGalleryLeftButtonClickerOne.addEventListener("click", function () {
+
+                    gallerySelectLeftButtonProperties()
+
+                })
+
             // GALLERY RIGHT CLICKERS AND MAIN BUTTONS =============================== //
             // ======================================================================= //
+
+                mainGalleryRightButtonClickerOne.addEventListener("click", function () {
+
+                    gallerySelectRightButtonProperties()
+
+                })
 
 
 
