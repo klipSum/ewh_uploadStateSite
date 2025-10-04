@@ -3130,7 +3130,7 @@
                             var email = "Anum.Mahmood@neom.com"
                             var emailCC = `Anum.Mahmood@neom.com; benjamin.sharpley@neom.com`
                             var subject = "change request rejected"
-                            var body = `Dear someone your request for changes to the thing has been rejected due to: reason for rejection, please review and resubmit. Thank you, and have a good day.`
+                            var body = `Dear {someone} your request for changes to the thing has been rejected due to: {reason for rejection}, please review and resubmit. Thank you, and have a good day.`
 
                             var mailtoLink = 
                             

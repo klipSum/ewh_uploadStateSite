@@ -3230,8 +3230,9 @@
 
                                                                                 width:100%;
                                                                                 margin:50px 0px 0px 0px;
+                                                                                z-index:-1;
                                                                                 padding:20px 0px;
-                                                                                display:block;
+                                                                                display:none;
                                                                                 background:#20c72e;
                                                                                 transition:all 600ms ease;
                                                                                 -o-transition:all 600ms ease;
@@ -3256,3 +3257,20 @@
                                                                                     -webkit-transition:all 600ms ease;
 
                                                                                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* MEDIA QUERIES FOR QUICK PLAYS ================================================= */
+    /* =============================================================================== */
+
+        /* 0px - 500px */

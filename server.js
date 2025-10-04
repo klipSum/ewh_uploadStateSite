@@ -520,6 +520,133 @@
 
 
 
+            // FOR INTRO SECTION POST =========================================
+            // ================================================================
+
+                app.post("/editHomePage", function (req, res) {
+
+                    // SETUP TIME AND DATE STAMPS =============================
+                    // ========================================================
+
+                        // SETUP VRAIABLES ====================================
+                        // ====================================================
+
+                            // SETUP VRAIABLES FOR TIME AND DATE STRINGS ======
+                            // ================================================
+
+                                const timeAndDateInitiate = new Date()
+
+                                    // SETUP VARIABLES TO GET TIME MARKERS ====
+                                    // ========================================
+
+                                        const hour = timeAndDateInitiate.getHours()
+                                        const minute = timeAndDateInitiate.getMinutes()
+
+                                    // SETUP VARIABLES TO GET DATE MARKERS ====
+                                    // ========================================
+
+                                        const day = timeAndDateInitiate.getDate()
+                                        const month = timeAndDateInitiate.getMonth()
+                                        const year = timeAndDateInitiate.getFullYear()
+
+                            // SETUP VRAIABLES FOR ARRAYS =====================
+                            // ================================================
+
+                                const monthMappers = [
+                                    
+                                    "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+                                    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
+                                
+                                ]
+
+                            // SETUP FULL CONSTRUCTED STRINGS =================
+                            // ================================================
+
+                                // MAKE FULL IME AND DATE STRINGS =============
+                                // ============================================
+
+                                    var currentTime = `${hour}H${minute}`
+                                    var currentDate = `${day} ${monthMappers[month]} ${year}`
+
+                    // CREATE NEW POSTS FOR FIELDS ============================
+                    // ========================================================
+
+                        // FOR NAV BAR POSTS ==================================
+                        // ====================================================
+
+                        // FOR INTRO SECTION POSTS ============================
+                        // ====================================================
+
+                            let newIntroCurrentContent = new introCurrentContent ({
+
+                                // TIME AND DATE ==============================
+                                // ============================================
+
+                                    introSectionPostedTime:currentTime,
+                                    introSectionPostedDate:currentDate,
+
+                                // BACKGROUND =================================
+                                // ============================================
+
+                                    introCurrentBackgroundMain:req.body.mainScreenBackground,
+
+                                // HEADLINE ===================================
+                                // ============================================
+
+                                    introCurrentHeadlineMainEng:req.body.mainScreenEnglishHeadline,
+                                    introCurrentHeadlineMainArb:req.body.mainScreenArabicHeadline,
+
+                                // SUB HEADLINE ===============================
+                                // ============================================
+
+                                    introCurrentSubHeadlineMainEng:req.body.mainScreenEnglishSubHeadline,
+                                    introCurrentSubHeadlineMainArb:req.body.mainScreenArabicSubHeadline,
+
+                                // ACTION BUTTON ==============================
+                                // ============================================
+
+                                    introCurrentActionButtonStatus:req.body.mainScreenEnglishActionButtonStatus,
+                                    introCurrentActionButtonTextMainEng:req.body.mainScreenEnglishActionButtonText,
+                                    introCurrentActionButtonTextMainArb:req.body.mainScreenArabicActionButtonText,
+                                    introCurrentActionButtonFormat:req.body.mainScreenArabicActionButtonFormat,
+
+                                // TECHFRAME ==================================
+                                // ============================================
+
+                                    introCurrentTechFrameMain:req.body.mainScreenTechframe,
+
+                                // SUBMITTER DEPARTMENT =======================
+                                // ============================================
+
+                                    introCurrentSubmitterDepartmentMain:"marketing",
+
+                                // SUBMITTER NAME =============================
+                                // ============================================
+
+                                    introCurrentSubmitterNameMain:"this person"
+
+
+                            })
+
+                    // SAVE POSTS TO MONGO DB =================================
+                    // ========================================================
+
+                        newIntroCurrentContent.save()
+
+                    // REDIRECT BACK TO PAGE ==================================
+                    // ========================================================
+
+                        res.redirect("/editHomePage")
+
+                })
+
+
+
+
+
+
+
+
         // FOR APPROVER PAGE ==================================================
         // ====================================================================
 
