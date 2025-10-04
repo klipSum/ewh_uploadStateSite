@@ -215,6 +215,7 @@
                     margin:auto;
                     z-index:501;
                     position:absolute;
+                    display:none;
                     transition:all 600ms ease;
                     -o-transition:all 600ms ease;
                     -ms-transition:all 600ms ease;
@@ -337,6 +338,7 @@
                     top:0px;
                     left:-50px;
                     cursor:pointer;
+                    display:none;
                     position:absolute;
                     background:#2E3D4C;
                     border-radius:1000px;
@@ -438,6 +440,7 @@
                     top:0px;
                     left:-50px;
                     cursor:pointer;
+                    display:none;
                     position:absolute;
                     background:#2E3D4C;
                     border-radius:1000px;
@@ -539,6 +542,7 @@
                     top:0px;
                     left:-50px;
                     cursor:pointer;
+                    display:none;
                     position:absolute;
                     background:#2E3D4C;
                     border-radius:1000px;
@@ -640,6 +644,7 @@
                     top:50px;
                     left:60px;
                     cursor:pointer;
+                    display:none;
                     position:absolute;
                     background:#2E3D4C;
                     border-radius:1000px;
@@ -744,6 +749,7 @@
                         bottom:0;
                         margin:auto;
                         cursor:pointer;
+                        display:none;
                         position:absolute;
                         background:#2E3D4C;
                         border-radius:1000px;
@@ -847,6 +853,7 @@
                         bottom:0;
                         margin:auto;
                         cursor:pointer;
+                        display:none;
                         position:absolute;
                         background:#2E3D4C;
                         border-radius:1000px;
@@ -950,6 +957,7 @@
                         bottom:0;
                         margin:auto;
                         cursor:pointer;
+                        display:none;
                         position:absolute;
                         background:#2E3D4C;
                         border-radius:1000px;

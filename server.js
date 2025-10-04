@@ -230,6 +230,84 @@
 
 
 
+        // FOR MAIN SITE EDIT HOME PAGE =======================================
+        // ====================================================================
+
+            app.get("/editHomePage", function (req, res) {
+
+                // SETUP TIME AND DATE STAMPS =================================
+                // ============================================================
+
+                    // SETUP VRAIABLES ========================================
+                    // ========================================================
+
+                        // SETUP VRAIABLES FOR TIME AND DATE STRINGS ==========
+                        // ====================================================
+
+                            const timeAndDateInitiate = new Date()
+
+                                // SETUP VARIABLES TO GET TIME MARKERS =======
+                                // ===========================================
+
+                                    const hour = timeAndDateInitiate.getHours()
+                                    const minute = timeAndDateInitiate.getMinutes()
+
+                                // SETUP VARIABLES TO GET DATE MARKERS =======
+                                // ===========================================
+
+                                    const day = timeAndDateInitiate.getDate()
+                                    const month = timeAndDateInitiate.getMonth()
+                                    const year = timeAndDateInitiate.getFullYear()
+
+                        // SETUP VRAIABLES FOR ARRAYS =========================
+                        // ====================================================
+
+                            const monthMappers = [
+                                
+                                "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+                                "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
+                            
+                            ]
+
+                        // SETUP FULL CONSTRUCTED STRINGS =====================
+                        // ====================================================
+
+                            // MAKE FULL IME AND DATE STRINGS =================
+                            // ================================================
+
+                                var currentTime = `${hour}H${minute}`
+                                var currentDate = `${day} ${monthMappers[month]} ${year}`
+
+
+
+
+
+
+
+
+                // SETUP FIND SCHEMA FROM MONGO DB ============================
+                // ============================================================
+
+                    introCurrentContent.find().then((introCurrents => {
+
+
+                        // RENDER PAGE WITH RETRIEVED LIST ====================
+                        // ====================================================
+
+                            res.render("mainSiteRoutes/indexEditMainSite", {
+
+                                introContentStylesList: introCurrents
+
+                            })
+
+                    }))
+
+            })
+
+
+
+
+
         // FOR APPROVER SITE HOME PAGE ========================================
         // ====================================================================
 
